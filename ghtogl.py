@@ -263,12 +263,12 @@ if __name__ == '__main__':
 				   version='%(prog)s 1.0')
   parser.add_argument('--github_api', type=str, 
 		      default='https://api.github.com', 
-		      help='Github api url: https://api.github.com')
+		      help='github api url: https://api.github.com')
   parser.add_argument('--github_api_token', type=str, 
 		      help='api token, https://github.com/settings/applications#personal-access-tokens')
   parser.add_argument('--github_project', type=str, 
                       required=True,
-		      help='Github project path example: namespace/project')
+		      help='github project path example: namespace/project')
   parser.add_argument('--gitlab_api', type=str, 
                       required=True,
 		      help='gitlab api url example: https://gitlab.localhost.domain/api/v3')

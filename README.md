@@ -38,5 +38,5 @@ optional arguments:
                         get your api token at
                         [https://gitlab.localhost.domain]/profile/account
   --gitlab_project GITLAB_PROJECT
-                        getlab project path example: namespace/project
+                        gitlab project path example: namespace/project
 ```

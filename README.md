@@ -25,12 +25,12 @@ optional arguments:
   -h, --help            show this help message and exit
   -v, --version         show program's version number and exit
   --github_api GITHUB_API
-                        Github api url: https://api.github.com
+                        github api url: https://api.github.com
   --github_api_token GITHUB_API_TOKEN
                         api token, https://github.com/settings/applications
                         #personal-access-tokens
   --github_project GITHUB_PROJECT
-                        Github project path example: namespace/project
+                        github project path example: namespace/project
   --gitlab_api GITLAB_API
                         gitlab api url example:
                         https://gitlab.localhost.domain/api/v3

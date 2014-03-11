@@ -1,10 +1,10 @@
 ghtogl
 ======
 
-migrate github project issues,notes,milestones,labels to gitlab project
+migrate github project issues, notes, milestones, and labels to gitlab project
 
 Get your API tokens from:
- * https://gitlab.localhost.domain]/profile/account
+ * https://[gitlab.localhost.domain]/profile/account
  * https://github.com/settings/applications
 
 Example:
@@ -18,7 +18,7 @@ usage: ghtogl.py [-h] [-v] [--github_api GITHUB_API]
                  GITHUB_PROJECT --gitlab_api GITLAB_API --gitlab_api_token
                  GITLAB_API_TOKEN --gitlab_project GITLAB_PROJECT
 
-Migrate issues,comments,labels,milestones from github project to gitlab
+Migrate issues, comments, labels, and milestones from github project to gitlab
 project
 
 optional arguments:

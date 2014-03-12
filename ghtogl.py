@@ -5,7 +5,7 @@ import requests
 class Github:
   '''
   NOTE:
-  if you preform tomany requests to github you will get locked out for 1h
+  if you perform too many requests to github you will get locked out for 1h
   see: http://developer.github.com/v3/#rate-limiting
   Set api_token to reduce the issue.
   '''
@@ -259,7 +259,7 @@ def main(args):
 
 if __name__ == '__main__':
   import argparse
-  parser = argparse.ArgumentParser(description='Migrate issues,comments,labels,milestones from github project to gitlab project', 
+  parser = argparse.ArgumentParser(description='Migrate issues, comments, labels, and milestones from github project to gitlab project', 
 				   version='%(prog)s 1.0')
   parser.add_argument('--github_api', type=str, 
 		      default='https://api.github.com', 

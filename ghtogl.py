@@ -201,22 +201,22 @@ def main(args):
   
   gh_ratelimit_remaining = github.get_ratelimit_remaining()
 
-  print('Remaining github {0} API calls'.format(gh_ratelimit_remaining))
+  print(u'Remaining github {0} API calls'.format(gh_ratelimit_remaining))
   if gh_ratelimit_remaining < 50:
-    print('WARNING: Github API call limit is low, please check --github_api_token')  
-  print('Using github project: {0}'.format(args.github_project))
-  print('Found github milestones: {0}, issues: {1}'.format(len(gh_m), len(gh_i)))
+    print(u'WARNING: Github API call limit is low, please check --github_api_token')  
+  print(u'Using github project: {0}'.format(args.github_project))
+  print(u'Found github milestones: {0}, issues: {1}'.format(len(gh_m), len(gh_i)))
 
   gl_p = gitlab.get_project(args.gitlab_project)
   pid = gl_p['id']
   owner_id = gl_p['owner']['id']
-  print('Using gitlab project: {0}'.format(args.gitlab_project))
-  print('Found gitlab project_id: {0}, and owner_id: {1}'.format(pid, owner_id))
+  print(u'Using gitlab project: {0}'.format(args.gitlab_project))
+  print(u'Found gitlab project_id: {0}, and owner_id: {1}'.format(pid, owner_id))
 
   milestone_map = {}
   for m in gh_m:
     data={ 'title': m['title'], 'description': m['description'] }
-    print('Creating gitlab milestone: {0}'.format(m['title']))
+    print(u'Creating gitlab milestone: {0}'.format(m['title']))
     new_m = gitlab.post_milestone(pid, data=data )
     milestone_map[m['id']] = new_m['id']
     
@@ -240,17 +240,17 @@ def main(args):
     if i.has_key('milestone') and i['milestone']:
       data['milestone_id'] = milestone_map.get(i['milestone']['id'], None)
     
-    print('Creating gitlab issue: {0}'.format(i['title']))
+    print(u'Creating gitlab issue: {0}'.format(i['title']))
     new_i = gitlab.post_issue(pid, data=data )
     
     if i['comments'] > 0:
       comments = github.get_issue_comments(args.github_project, i['number'])
-      print(' |- adding comments: {0}'.format(i['comments']))
+      print(u' |- adding comments: {0}'.format(i['comments']))
       for c in comments:
 	gitlab.post_issue_note(pid, new_i['id'], data={ 'body': c['body'] } )
       
     if i['state'] == 'closed':
-      print(' |- Update gitlab issue_id: {0} state: {2}'.format(new_i['id'], i['title'], i['state']))
+      print(u' |- Update gitlab issue_id: {0} state: {2}'.format(new_i['id'], i['title'], i['state']))
       ## Note: Gitlab uses 'close' not 'closed'
       gitlab.put_issue(pid, new_i['id'], data={ 'state_event': 'close' } )
 

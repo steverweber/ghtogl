@@ -209,7 +209,13 @@ def main(args):
 
   gl_p = gitlab.get_project(args.gitlab_project)
   pid = gl_p['id']
-  owner_id = gl_p['owner']['id']
+  # owner id moved https://github.com/steverweber/ghtogl/issues/9
+  if 'namesapce' in gl_p:
+    owner_id = gl_p['namespace']
+  if 'owner' in gl_p:
+    if 'id' in gl_p['owner']:
+      owner_id = gl_p['owner']['id']
+
   print(u'Using gitlab project: {0}'.format(args.gitlab_project))
   print(u'Found gitlab project_id: {0}, and owner_id: {1}'.format(pid, owner_id))
 

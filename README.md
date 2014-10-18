@@ -7,6 +7,8 @@ Get your API tokens from:
  * https://[gitlab.localhost.domain]/profile/account
  * https://github.com/settings/applications
 
+license = http://opensource.org/licenses/MIT
+
 Example:
 ```
 python gtoh.py --github_project 'group/project' --github_api_token '8468e474c8bc65a0?????' --gitlab_api 'https://gitlab.localhost/api/v3' --gitlab_project 'group/project' --gitlab_api_token '2fEJ9AadkwU????' 
@@ -45,4 +47,4 @@ Issue
 -------
 
 If project in Gitlab has no "owner' you might need to first fork the project under your own user
-befor using the script.
+before using the script.

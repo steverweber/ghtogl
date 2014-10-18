@@ -40,3 +40,9 @@ optional arguments:
   --gitlab_project GITLAB_PROJECT
                         gitlab project path example: namespace/project
 ```
+
+Issue
+-------
+
+If project in Gitlab has no "owner' you might need to first fork the project under your own user
+befor using the script.

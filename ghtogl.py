@@ -210,7 +210,7 @@ def main(args):
   gl_p = gitlab.get_project(args.gitlab_project)
   pid = gl_p['id']
   # owner id moved https://github.com/steverweber/ghtogl/issues/9
-  if 'namesapce' in gl_p:
+  if 'namespace' in gl_p:
     owner_id = gl_p['namespace']
   if 'owner' in gl_p:
     if 'id' in gl_p['owner']:

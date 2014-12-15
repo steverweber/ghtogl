@@ -15,7 +15,7 @@ python gtoh.py --github_project 'group/project' --github_api_token '8468e474c8bc
 ```
 
 ```
-usage: ghtogl.py [-h] [-v] [--github_api GITHUB_API]
+usage: ghtogl.py [-h] [--version] [--github_api GITHUB_API]
                  [--github_api_token GITHUB_API_TOKEN] --github_project
                  GITHUB_PROJECT --gitlab_api GITLAB_API --gitlab_api_token
                  GITLAB_API_TOKEN --gitlab_project GITLAB_PROJECT
@@ -25,7 +25,7 @@ project
 
 optional arguments:
   -h, --help            show this help message and exit
-  -v, --version         show program's version number and exit
+  --version             show program's version number and exit
   --github_api GITHUB_API
                         github api url: https://api.github.com
   --github_api_token GITHUB_API_TOKEN

@@ -265,8 +265,11 @@ def main(args):
 
 if __name__ == '__main__':
   import argparse
-  parser = argparse.ArgumentParser(description='Migrate issues, comments, labels, and milestones from github project to gitlab project', 
-				   version='%(prog)s 1.0')
+  
+  add_argument(..., action='version', version="N", ...)
+  
+  parser = argparse.ArgumentParser(description='Migrate issues, comments, labels, and milestones from github project to gitlab project')
+  parser.add_argument('--version', action='version', default=argparse.SUPPRESS, version='%(prog)s 1.1')
   parser.add_argument('--github_api', type=str, 
 		      default='https://api.github.com', 
 		      help='github api url: https://api.github.com')

@@ -207,7 +207,14 @@ def main(args):
   print(u'Using github project: {0}'.format(args.github_project))
   print(u'Found github milestones: {0}, issues: {1}'.format(len(gh_m), len(gh_i)))
 
+  if args.verbose:
+    print('gitlab projects: ')
+    pprint(gitlab.get_projects())
+
   gl_p = gitlab.get_project(args.gitlab_project)
+  if gl_p == None:
+  	raise Exception('Gitlab project not found: {0}'.format(args.gitlab_project))
+
   if args.verbose:
     pprint(gl_p)
   pid = gl_p['id']

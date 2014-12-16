@@ -208,6 +208,8 @@ def main(args):
   print(u'Found github milestones: {0}, issues: {1}'.format(len(gh_m), len(gh_i)))
 
   gl_p = gitlab.get_project(args.gitlab_project)
+  if args.verbose:
+    pprint(gl_p)
   pid = gl_p['id']
   # owner id moved https://github.com/steverweber/ghtogl/issues/9
   if 'namespace' in gl_p:
@@ -268,6 +270,8 @@ if __name__ == '__main__':
 
   parser = argparse.ArgumentParser(description='Migrate issues, comments, labels, and milestones from github project to gitlab project')
   parser.add_argument('--version', action='version', default=argparse.SUPPRESS, version='%(prog)s 1.1')
+  parser.add_argument("--verbose", help="increase output verbosity",
+                      action="store_true")
   parser.add_argument('--github_api', type=str, 
 		      default='https://api.github.com', 
 		      help='github api url: https://api.github.com')
